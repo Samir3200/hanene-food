@@ -61,8 +61,18 @@ const plats = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-100 to-yellow-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 flex flex-col items-center py-10 px-4">
-      <header className="mb-12 text-center">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-700 dark:text-yellow-300 drop-shadow-lg mb-4">Hanen Food</h1>
+      <header className="mb-12 text-center flex flex-col items-center">
+        <div className="mb-4">
+          <Image
+            src="/imageappli.jpeg"
+            alt="Logo Hanene Food"
+            width={100}
+            height={100}
+            className="rounded-full shadow-lg border-4 border-orange-200 dark:border-yellow-300 object-cover"
+            priority
+          />
+        </div>
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-700 dark:text-yellow-300 drop-shadow-lg mb-4">Hanene Food</h1>
         <p className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-200 max-w-2xl mx-auto">
           Découvrez nos spécialités culinaires tunisiennes, préparées avec passion et authenticité.
         </p>
