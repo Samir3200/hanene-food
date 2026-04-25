@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hanene Food",
+  title: "Hanen Food",
   description: "Spécialités culinaires tunisiennes faites maison.",
 };
 
