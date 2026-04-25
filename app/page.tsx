@@ -1,35 +1,60 @@
+ 
 import Image from "next/image";
 
 const plats = [
   {
     nom: "Briques",
     images: ["/Briques1.jpeg", "/Briques2.jpeg"],
-    description: "Délicieuses feuilles croustillantes garnies de thon, œuf ou viande, spécialité incontournable de la cuisine tunisienne.",
+    description: "Délicieuses feuilles croustillantes garnies de thon, œuf ou viande hachée, spécialité incontournable de la cuisine tunisienne.",
+    prix: "3.50€ l'unité",
   },
   {
     nom: "Couscous",
     images: ["/Couscous1.jpeg", "/Couscous2.jpeg"],
-    description: "Le plat emblématique du Maghreb, semoule fine accompagnée de légumes, viande ou poisson, parfumé aux épices.",
+    description: "Le plat emblématique du Maghreb, semoule fine accompagnée de légumes, viande ou poulet, parfumé aux épices.",
+    prix: "8€",
   },
   {
     nom: "Fricassés",
     images: ["/Fricassés1.jpeg", "/Fricassés2.jpeg"],
-    description: "Petits pains frits garnis de thon, œuf, olives et harissa, parfaits pour un encas savoureux.",
+    description: "Petits pains frits garnis de thon, œuf, olives et harissa sur demande, parfaits pour un encas savoureux.",
+    prix: "3€ l'unité",
   },
   {
     nom: "Mloukhia",
     images: ["/Mloukhia.jpeg"],
     description: "Ragoût vert foncé à base de corète, mijoté longuement avec de la viande, riche en saveurs et en traditions.",
+    prix: "7€",
   },
   {
     nom: "Salade Mechouiya",
     images: ["/Salade mechouiya.jpeg"],
-    description: "Salade grillée de poivrons, tomates et oignons, relevée à l'huile d'olive et au citron.",
+    description: "Salade grillée de poivrons, tomates et oignons, relevée à l'huile d'olive.",
+    prix: "4€",
   },
   {
     nom: "Tagines",
     images: ["/Tagines1.jpeg", "/Tagines2.jpeg"],
-    description: "Omelette tunisienne cuite au four, garnie de légumes, viande ou poisson, fondante et parfumée.",
+    description: "Tagines tunisiennes cuite au four, garnie de pomme de terre, persil, fromage rapé, oeuf, fondante et parfumée au poulet ou viande hachée.",
+    prix: "2.50€ l'unité",
+  },
+  {
+    nom: "Haricots",
+    images: ["/Haricot1.jpeg", "/Haricot2.jpeg"], // À compléter avec le nom de l'image si disponible, exemple: ["/Haricots.jpeg"]
+    description: "Plat mijoté de haricots blancs à la sauce tomate, souvent accompagné de viande ou poulet.",
+    prix: "7€",
+  },
+  {
+    nom: "Riz",
+    images: ["/Riz1.jpeg", "/Riz2.jpeg"], // À compléter avec le nom de l'image si disponible, exemple: ["/Riz.jpeg"]
+    description: "Riz blanc parfumé aux épices, cuisiné avec légumes, poulet, viandes selon la tradition tunisienne.",
+    prix: "8€",
+  },
+   {
+    nom: "Petits pois",
+    images: ["/petitpois1.jpeg"], // À compléter avec le nom de l'image si disponible, exemple: ["/PetitsPois.jpeg"]
+    description: "Délicieux ragoût de petits pois cuisinés à la tunisienne, souvent accompagné de viande ou poulet.",
+    prix: "7€",
   },
 ];
 
@@ -42,7 +67,7 @@ export default function Home() {
           Découvrez nos spécialités culinaires tunisiennes, préparées avec passion et authenticité.
         </p>
       </header>
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-8xl">
         {plats.map((plat) => (
           <div key={plat.nom} className="bg-white/80 dark:bg-zinc-800/80 rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform">
             <div className="flex gap-2 mb-4">
@@ -58,7 +83,8 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <h2 className="text-2xl font-bold text-orange-800 dark:text-yellow-200 mb-2">{plat.nom}</h2>
+            <h2 className="text-2xl font-bold text-orange-800 dark:text-yellow-200 mb-1">{plat.nom}</h2>
+            <p className="text-xl font-extrabold text-black dark:text-white mb-2">{plat.prix}</p>
             <p className="text-zinc-700 dark:text-zinc-100 text-center text-base">{plat.description}</p>
           </div>
         ))}
