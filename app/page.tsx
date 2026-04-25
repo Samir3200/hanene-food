@@ -1,65 +1,84 @@
 import Image from "next/image";
 
+const plats = [
+  {
+    nom: "Briques",
+    images: ["/Briques1.jpeg", "/Briques2.jpeg"],
+    description: "Délicieuses feuilles croustillantes garnies de thon, œuf ou viande, spécialité incontournable de la cuisine tunisienne.",
+  },
+  {
+    nom: "Couscous",
+    images: ["/Couscous1.jpeg", "/Couscous2.jpeg"],
+    description: "Le plat emblématique du Maghreb, semoule fine accompagnée de légumes, viande ou poisson, parfumé aux épices.",
+  },
+  {
+    nom: "Fricassés",
+    images: ["/Fricassés1.jpeg", "/Fricassés2.jpeg"],
+    description: "Petits pains frits garnis de thon, œuf, olives et harissa, parfaits pour un encas savoureux.",
+  },
+  {
+    nom: "Mloukhia",
+    images: ["/Mloukhia.jpeg"],
+    description: "Ragoût vert foncé à base de corète, mijoté longuement avec de la viande, riche en saveurs et en traditions.",
+  },
+  {
+    nom: "Salade Mechouiya",
+    images: ["/Salade mechouiya.jpeg"],
+    description: "Salade grillée de poivrons, tomates et oignons, relevée à l'huile d'olive et au citron.",
+  },
+  {
+    nom: "Tagines",
+    images: ["/Tagines1.jpeg", "/Tagines2.jpeg"],
+    description: "Omelette tunisienne cuite au four, garnie de légumes, viande ou poisson, fondante et parfumée.",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-100 to-yellow-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 flex flex-col items-center py-10 px-4">
+      <header className="mb-12 text-center">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-700 dark:text-yellow-300 drop-shadow-lg mb-4">Hanene Food</h1>
+        <p className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-200 max-w-2xl mx-auto">
+          Découvrez nos spécialités culinaires tunisiennes, préparées avec passion et authenticité.
+        </p>
+      </header>
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+        {plats.map((plat) => (
+          <div key={plat.nom} className="bg-white/80 dark:bg-zinc-800/80 rounded-2xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform">
+            <div className="flex gap-2 mb-4">
+              {plat.images.map((img, idx) => (
+                <div key={img} className="relative w-32 h-32 rounded-xl overflow-hidden border-2 border-orange-200 dark:border-yellow-400 shadow">
+                  <Image
+                    src={img}
+                    alt={plat.nom + " photo " + (idx + 1)}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
+            <h2 className="text-2xl font-bold text-orange-800 dark:text-yellow-200 mb-2">{plat.nom}</h2>
+            <p className="text-zinc-700 dark:text-zinc-100 text-center text-base">{plat.description}</p>
+          </div>
+        ))}
+      </section>
+      <a
+        href="https://wa.me/33651519626"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 flex items-center gap-2 px-6 py-3 rounded-full bg-green-500 hover:bg-green-600 text-white font-bold shadow-lg text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-400"
+        aria-label="Commander sur WhatsApp"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="currentColor">
+          <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.832 4.584 2.236 6.393L4 29l7.828-2.05C13.416 27.632 14.692 28 16 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.17 0-2.314-.203-3.393-.604l-.242-.088-4.65 1.217 1.24-4.527-.158-.234C7.21 18.13 6.5 16.594 6.5 15c0-5.238 4.262-9.5 9.5-9.5s9.5 4.262 9.5 9.5-4.262 9.5-9.5 9.5zm5.25-7.25c-.287-.144-1.7-.84-1.963-.936-.263-.096-.454-.144-.646.144-.192.287-.74.936-.907 1.129-.168.192-.335.216-.622.072-.287-.144-1.213-.447-2.31-1.425-.854-.76-1.43-1.698-1.598-1.985-.168-.287-.018-.443.127-.587.13-.13.287-.335.431-.503.144-.168.192-.287.288-.479.096-.192.048-.36-.024-.504-.072-.144-.646-1.56-.885-2.14-.233-.56-.47-.484-.646-.492-.168-.007-.36-.009-.552-.009-.192 0-.504.072-.768.36-.263.287-1.01.984-1.01 2.4 0 1.416 1.034 2.785 1.178 2.978.144.192 2.037 3.12 4.938 4.254.69.276 1.228.44 1.647.563.692.22 1.323.189 1.82.115.555-.082 1.7-.693 1.94-1.363.24-.67.24-1.244.168-1.363-.072-.12-.263-.192-.55-.336z"/>
+        </svg>
+        Commander sur WhatsApp
+      </a>
+      <footer className="mt-16 text-zinc-500 dark:text-zinc-400 text-sm text-center">
+        &copy; {new Date().getFullYear()} Hanene Food. Tous droits réservés.
+      </footer>
     </div>
   );
 }
+// ...existing code...
