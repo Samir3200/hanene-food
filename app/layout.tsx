@@ -28,7 +28,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/imageappli.jpeg" type="image/jpeg" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
