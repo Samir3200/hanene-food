@@ -72,7 +72,7 @@ export default function Home() {
             priority
           />
         </div>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-700 dark:text-yellow-300 drop-shadow-lg mb-4">Hanene Food</h1>
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-700 dark:text-yellow-300 drop-shadow-lg mb-4">Hanen Food</h1>
         <p className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-200 max-w-2xl mx-auto">
           Découvrez nos spécialités culinaires tunisiennes, préparées avec passion et authenticité.
         </p>
