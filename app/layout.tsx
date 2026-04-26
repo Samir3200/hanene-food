@@ -28,7 +28,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon (1).ico" type="image/x-icon" />
         {/* Open Graph meta tags for social sharing */}
         <meta property="og:title" content="Hanen Food" />
         <meta property="og:description" content="Spécialités culinaires tunisiennes faites maison." />
