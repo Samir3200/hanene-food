@@ -43,7 +43,12 @@ export default function RootLayout({
         <meta name="twitter:image" content="https://hanen-food.vercel.app/og-image.png" />
       </head>
       <body className="min-h-full flex flex-col">
-        {children}
+        <div className="flex-1 flex flex-col">
+          {children}
+        </div>
+        <footer className="w-full text-center py-8 text-lg bg-orange-50 dark:bg-zinc-900 text-orange-700 dark:text-yellow-300 border-t border-orange-200 dark:border-zinc-700 mt-8">
+          Créé par Samir &mdash; Contact : <a href="mailto:samelmir5a@gmail.com" className="underline hover:text-orange-900">samelmir5a@gmail.com</a>
+        </footer>
         <Analytics />
       </body>
     </html>
