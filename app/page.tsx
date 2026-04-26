@@ -64,7 +64,7 @@ export default function Home() {
       <header className="mb-12 text-center flex flex-col items-center">
         <div className="mb-4">
           <Image
-            src="/favicon - title.png"
+            src="/favicon (1).ico"
             alt="Logo Hanene Food"
             width={100}
             height={100}
